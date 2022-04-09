@@ -1,0 +1,20 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: elk-network
+  namespace: elk
+spec:
+  gateways:
+    - default/general-gateway
+  hosts:
+    - "elk.localhost"
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: kibana-kibana
+            port:
+              number: 5601

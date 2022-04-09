@@ -1,0 +1,20 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: zapkin-network
+  namespace: telemetry
+spec:
+  gateways:
+    - default/general-gateway
+  hosts:
+    - "zapkin.localhost"
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: zapkin
+            port:
+              number: 5601
