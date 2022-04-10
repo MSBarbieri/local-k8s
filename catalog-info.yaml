@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: local-k8s
+  annotations:
+    github.com/project-slug: MSBarbieri/local-k8s
+spec:
+  type: other
+  lifecycle: unknown
+  owner: backstage
