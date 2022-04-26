@@ -73,6 +73,7 @@ spec:
   values:
     global:
       proxy:
+        autoInject: enabled
         resources:
           requests:
             cpu: 10m

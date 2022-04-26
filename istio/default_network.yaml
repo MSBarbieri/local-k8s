@@ -1,0 +1,42 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: default-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - "*"
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+# ---
+# apiVersion: networking.istio.io/v1beta1
+# kind: VirtualService
+# metadata:
+#   annotations:
+#   name: general
+#   namespace: default
+# spec:
+#   gateways:
+#     - general-gateway
+#   hosts:
+#     - "knative.localhost"
+#   http:
+#     - match:
+#         - uri:
+#             prefix: /
+#       route:
+#         - destination:
+#             host: helloworld.default.svc.cluster.local
+#             port:
+#               number: 80
+#           headers:
+#             request:
+#               add:
+#                 Host: helloworld.default.example.com
+
