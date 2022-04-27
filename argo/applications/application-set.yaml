@@ -22,7 +22,7 @@ spec:
         server: '{{url}}'
         namespace: '{{namespace}}'
       source:
-        repoURL: https://github.com/SelfOrganizedCompany/argocd-application-sets
+        repoURL: https://github.com/MSBarbieri/Argocd-Application-Sets.git
         targetRevision: HEAD
         path: .
       syncPolicy:
